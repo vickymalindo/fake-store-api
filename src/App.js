@@ -4,6 +4,7 @@ import Categories from './components/front/Categories';
 import Login from './components/user/Login';
 import Daftar from './components/user/Daftar';
 import MainFront from './components/front/MainFront';
+import Category from './components/front/Category';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Route path="categories" element={<Categories />} />
           <Route path="login" element={<Login />} />
           <Route path="daftar" element={<Daftar />} />
+          <Route path="category/:cat" element={<Category />} />
         </Routes>
       </Router>
     </>

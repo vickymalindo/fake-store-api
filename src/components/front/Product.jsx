@@ -14,7 +14,6 @@ const Product = () => {
         getLimit()
     },[])
   return (
-    <>
         <div className='flex flex-col lg:flex-row gap-3 justify-between items-center p-12'>
             {limitProducts.map(val => {
                 return (
@@ -35,7 +34,6 @@ const Product = () => {
             })
             }
         </div>
-    </>
   )
 }
 
