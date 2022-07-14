@@ -29,35 +29,15 @@ const Categories = () => {
     <h3 className='font-bold text-center text-2xl tracking-wide'>Kategori</h3>
       <div className='flex flex-wrap md:flex-row gap-6 justify-center mt-2'>
         {categories.map((cat, index) => {
-          if (index === 0) {
-            return (
-              <div key={index} onClick={() => goCategory(cat)} className='cursor-pointer w-25 h-25 p-1.5 hover:scale-95 text-center border border-gray-500 border-solid rounded-md shadow-lg'>
-                <img src={handphoneIcons} alt="hp" className='w-12 h-12 ml-3 mt-1' />
-                <p className='text-gray-900 mt-4'>{cat}</p>
-              </div>
-            )
-          } else if(index === 1){
-            return (
-              <div key={index} onClick={() => goCategory(cat)} className='cursor-pointer w-25 h-25 p-1.5 hover:scale-95 text-center border border-gray-500 border-solid rounded-md shadow-lg'>
-                <img src={jeweleryIcons} alt="hp" className='w-12 h-12 ml-1 mt-1' />
-                <p className='text-gray-900 mt-4'>{cat}</p>
-              </div>
-            )
-          } else if(index === 2) {
-            return (
-              <div key={index} onClick={() => goCategory(cat)} className='cursor-pointer w-24 h-25 p-1.5 hover:scale-95 text-center border border-gray-500 border-solid rounded-md shadow-lg'>
-                <img src={menIcons} alt="hp" className='w-12 h-12 ml-4' />
-                <p className='text-gray-900'>{cat}</p>
-              </div>
-            )
-          } else {
-            return (
-              <div key={index} onClick={() => goCategory(cat)} className='cursor-pointer w-24 h-25 p-1.5 hover:scale-95 text-center border border-gray-500 border-solid rounded-md shadow-lg'>
-                <img src={womenIcons} alt="hp" className='w-12 h-12 ml-4' />
-                <p className='text-gray-900'>{cat}</p>
-              </div>
-            )
-          }
+          return (
+            <div key={index} onClick={() => goCategory(cat)} className='cursor-pointer w-24 h-25 p-1.5 hover:scale-95 text-center border border-gray-500 border-solid rounded-md shadow-lg'>
+              {index === 0 && <img src={handphoneIcons} alt="hp" className='w-12 h-12 ml-4 mt-2' />}
+              {index === 1 && <img src={jeweleryIcons} alt="hp" className='w-12 h-12 ml-4 mt-2' />}
+              {index === 2 && <img src={menIcons} alt="hp" className='w-12 h-12 ml-4 mt-2' />}
+              {index === 3 && <img src={womenIcons} alt="hp" className='w-12 h-12 ml-4 mt-2' />}
+              <p className='text-gray-900'>{cat}</p>
+            </div>
+          )
         })}
       </div>
     </div>

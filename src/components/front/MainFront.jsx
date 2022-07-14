@@ -1,5 +1,6 @@
 import React from 'react'
 import Categories from './Categories'
+import Footer from './Footer'
 import Nav from './Nav'
 import Product from './Product'
 import Thumbnail from './Thumbnail'
@@ -11,6 +12,7 @@ const MainFront = () => {
         <Thumbnail />
         <Categories />
         <Product />
+        <Footer />
     </>
   )
 }
