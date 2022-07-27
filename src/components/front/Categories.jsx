@@ -17,7 +17,6 @@ const Categories = () => {
   }
 
   const goCategory = (cat) => {
-    // console.log(cat)
     navigate(`category/${cat}`)
   }
   useEffect(() => {

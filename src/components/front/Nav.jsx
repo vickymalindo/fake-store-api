@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 const Nav = () => {
     const [navbarOpen, setNavbarOpen] = useState(false);
     return (
-            <nav className="sticky top-0 flex items-center justify-between px-2 py-3 bg-green-500 mb-2">
+            <nav className="sticky top-0 flex items-center justify-between px-2 py-3 bg-green-500">
                 <div className="container px-4 mx-auto flex flex-wrap items-center justify-between">
                     <div className="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start">
                         <Link

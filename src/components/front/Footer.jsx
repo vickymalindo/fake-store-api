@@ -12,7 +12,7 @@ import {FaPinterest} from 'react-icons/fa'
 const Footer = () => {
     return (
         <div className="mb-5">
-        <hr className="mb-4"/>
+            <hr className="mb-4"/>
             <div className="container mx-auto px-1 md:px-4 md:grid md:grid-cols-4 gap-2">
                 <div className="">
                     <h5 className="font-semibold text-lg">Tokopaedi</h5>

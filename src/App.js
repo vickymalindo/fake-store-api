@@ -5,6 +5,7 @@ import Login from './components/user/Login';
 import Daftar from './components/user/Daftar';
 import MainFront from './components/front/MainFront';
 import Category from './components/front/Category';
+import DetailProduct from './components/user/DetailProduct';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="login" element={<Login />} />
           <Route path="daftar" element={<Daftar />} />
           <Route path="category/:cat" element={<Category />} />
+          <Route path="product/:id" element={<DetailProduct />} />
         </Routes>
       </Router>
     </>
