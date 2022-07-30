@@ -4,9 +4,11 @@ import { FaStar } from 'react-icons/fa';
 import Footer from '../front/Footer';
 import Nav from '../front/Nav'
 import { Navigate, useNavigate } from 'react-router-dom';
+import {FaSearch} from 'react-icons/fa'
 
 const Main = () => {
   const [allProduct, setAllProduct] = useState([]);
+  const [query, setQuery] = useState('')
   const navigate = useNavigate();
 
   const buyProduct = async (id) => {
@@ -24,14 +26,7 @@ const Main = () => {
     return () => clearTimeout(timer)
   }, [])
 
-  // if(allProduct.length === 0){
-  //   return <div>...Loading</div>
-  // }
-
   const token = localStorage.getItem('token')
-  // if(!token){
-  //   navigate('/login')
-  // }
   
   return (
     <div>
@@ -39,6 +34,10 @@ const Main = () => {
         token ? 
         <div>
           <Nav />
+          <div className='border border-gray-600 rounded m-auto mt-5 flex items-center'>
+            <input className='w-9/12' type="text" placeholder='Search here...' onChange={(e) => setQuery(e.target.value)}/>
+            <button><FaSearch /></button>
+          </div>
           {allProduct.length === 0 ? 
             <div className='w-full h-screen flex justify-center items-center'>
               <div className='p-3 bg-green-300 text-green-900'>...loading</div>
