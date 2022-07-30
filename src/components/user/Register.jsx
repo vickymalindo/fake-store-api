@@ -2,7 +2,7 @@ import React from 'react'
 import Footer from '../front/Footer'
 import Nav from '../front/Nav'
 
-const Daftar = () => {
+const Register = () => {
   return (
     <>
         <Nav />
@@ -54,4 +54,4 @@ const Daftar = () => {
   )
 }
 
-export default Daftar
+export default Register

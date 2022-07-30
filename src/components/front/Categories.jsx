@@ -8,7 +8,7 @@ import womenIcons from '../../images/icons/woman-clothes.png'
 
 const Categories = () => {
   const [categories, setCategories] = useState([])
-  let navigate = useNavigate();
+  const navigate = useNavigate();
 
   const getCategories = () => {
     axios.get('https://fakestoreapi.com/products/categories').then((response) => {
@@ -25,7 +25,6 @@ const Categories = () => {
   
   return (
     <div className='my-8'>
-    <h3 className='font-bold text-center text-2xl tracking-wide'>Kategori</h3>
       <div className='flex flex-wrap md:flex-row gap-6 justify-center mt-2'>
         {categories.map((cat, index) => {
           return (

@@ -20,7 +20,9 @@ const Login = () => {
             const token = response?.data?.token;
             if(token){
                 localStorage.setItem('token', token);
-                setLoginStatus(!loginStatus)
+                localStorage.setItem('username', username);
+                localStorage.setItem('status', true)
+                setLoginStatus((status) => !status)
             }
         } catch (error) {
             setErrorMessage('Username or Password Invalid')
@@ -30,8 +32,8 @@ const Login = () => {
     return (
         <>
         <Nav />
-            {loginStatus ? <Navigate to="/" /> 
-            : 
+            {loginStatus ? <Navigate to='/user' />
+            :
             <div className="w-full h-screen flex flex-col items-center justify-center px-5 md:px-0">
                 <h1 className={errorMessage ? 'block py-1 px-2 bg-red-300 text-red-600 border-none rounded-lg mb-1' : 'hidden'}>{errorMessage}</h1>
                 <form className="w-full md:w-1/3 bg-white rounded-lg border border-gray-500" onSubmit={handleSubmit}>
