@@ -5,15 +5,16 @@ import {Link, useParams} from 'react-router-dom'
 import Footer from "../front/Footer";
 import Nav from "../front/Nav";
 import { FaStar, FaRegStar, FaCartPlus} from 'react-icons/fa'
+import Loading from "../loader/Loading";
 
 const DetailProduct = () => {
     const [productId, setProductId] = useState({})
-    const [quantity, setQuantity] = useState(0)
+    const [quantity, setQuantity] = useState(1)
     const {id} = useParams();
 
     const changeQuantity = (symbol) => {
         if(symbol === '-') {
-            return setQuantity((prev) => prev - 1 === -1 ? 0 : prev - 1)
+            return setQuantity((prev) => prev - 1 === 0 ? 1 : prev - 1)
         }
         setQuantity((prev) => prev + 1)
     }
@@ -23,16 +24,18 @@ const DetailProduct = () => {
             const response = await axios.get(`https://fakestoreapi.com/products/${id}`);
             setProductId(response.data)
         }
-        getDetailProduct();
+        const timer = setTimeout(() => {
+            getDetailProduct();
+        }, 1000)
+        return () => clearTimeout(timer)
     }, [id])
-
-    if(Object.entries(productId).length === 0){
-        return <div>Loading....</div>
-    }
 
     return (
         <>
             <Nav />
+            {Object.entries(productId).length === 0 ? 
+                <Loading children='Loadin...'/> 
+            : 
             <div className="w-full h-screen container flex flex-col md:flex-row justify-center md:justify-beetwen items-center gap-7 px-4 mb-10 md:mb-0 mt-16 sm:mt-16 md:mt-0">
                 <img src={productId.image} alt="" className="w-64 h-96"/>
                 <div>
@@ -89,7 +92,7 @@ const DetailProduct = () => {
                             </div>
                         }
                     </div>
-                    <h4 className="text-lg lg:text-xl font-semibold text-green-700 tracking-wide lg:tracking-wider">$ {productId.price}</h4>
+                    <h4 className="text-lg lg:text-xl font-semibold text-green-700 tracking-wide lg:tracking-wider">$ {productId.price * quantity}</h4>
                     <div className="mt-3">
                         <div className="flex items-center gap-1">
                             <span className="mr-2">Voucher Toko</span>
@@ -120,6 +123,7 @@ const DetailProduct = () => {
                     </div>
                 </div>
             </div>
+            }
             <Footer />
         </>
     )
