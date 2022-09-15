@@ -6,22 +6,22 @@ import MainFront from './components/front/MainFront';
 import Category from './components/front/Category';
 import DetailProduct from './components/user/DetailProduct';
 import Main from './components/user/Main';
+import Cart from './components/user/Cart';
 
 function App() {
   return (
-    <>
-      <Router>
-        <Routes>
-          <Route path='/' element={<MainFront />} />
-          <Route path='categories' element={<Categories />} />
-          <Route path='login' element={<Login />} />
-          <Route path='user' element={<Main />} />
-          <Route path='daftar' element={<Register />} />
-          <Route path='category/:cat' element={<Category />} />
-          <Route path='product/:id' element={<DetailProduct />} />
-        </Routes>
-      </Router>
-    </>
+    <Router>
+      <Routes>
+        <Route path='/' element={<MainFront />} />
+        <Route path='categories' element={<Categories />} />
+        <Route path='login' element={<Login />} />
+        <Route path='daftar' element={<Register />} />
+        <Route path='product/:id' element={<DetailProduct />} />
+        <Route path='user' element={<Main />} />
+        <Route path='user/cart' element={<Cart />} />
+        <Route path='category/:cat' element={<Category />} />
+      </Routes>
+    </Router>
   );
 }
 

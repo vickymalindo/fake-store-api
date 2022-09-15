@@ -17,12 +17,17 @@ const Categories = () => {
   }
 
   const goCategory = (cat) => {
-    navigate(`category/${cat}`)
+    const token = localStorage.getItem('token')
+    if (token) {
+      navigate(`/user/category/${cat}`)
+    } else {
+      navigate(`/category/${cat}`)
+    }
   }
   useEffect(() => {
     getCategories()
   }, [])
-  
+
   return (
     <div className='my-8'>
       <div className='flex flex-wrap md:flex-row gap-6 justify-center mt-2'>

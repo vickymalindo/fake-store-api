@@ -25,9 +25,8 @@ const Category = () => {
 
     return(
         <>
-        {/* {console.log(categoryItems)} */}
             <Nav />
-                <div className="flex flex-col md:flex-row justify-center items-center gap-3 md:w-full md:h-screen">
+                <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 place-items-center place-content-around gap-1 md:gap-3 md:w-full md:h-screen">
                     {categoryItems.map((category) => {
                         return (
                             <div className="border border-black rounded-lg px-3 py-2 w-48" key={category.id}>

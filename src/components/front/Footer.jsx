@@ -13,7 +13,7 @@ const Footer = () => {
     return (
         <div className="mb-5">
             <hr className="mb-4"/>
-            <div className="container mx-auto px-1 md:px-4 md:grid md:grid-cols-4 gap-2">
+            <div className="container mx-auto px-1 md:px-4 sm:grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 lg:place-content-around gap-2">
                 <div className="">
                     <h5 className="font-semibold text-lg">Tokopaedi</h5>
                     <p className="hover:text-green-500">Tentang Tokopaedi</p>
@@ -51,9 +51,9 @@ const Footer = () => {
                         <FaPinterest className="text-red-600 text-xl hover:scale-95"/>
                     </div>
                 </div>
-                <div>
+                <div className="md:col-span-3 lg:col-span-1">
                     <img src={TOKOPEDIA} alt="" />
-                    <div className="flex gap-2 items-center">
+                    <div className="flex justify-center gap-2 items-center">
                         <img src={GPlay} alt="Plays Store" className="w-28 h-9"/>
                         <img src={APlay} alt="Apps Store" className="w-28 h-9"/>
                     </div>
