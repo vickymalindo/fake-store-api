@@ -7,9 +7,12 @@ import Category from './components/front/Category';
 import DetailProduct from './components/user/DetailProduct';
 import Main from './components/user/Main';
 import Cart from './components/user/Cart';
+import { ToastContainer } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   return (
+    <>
     <Router>
       <Routes>
         <Route path='/' element={<MainFront />} />
@@ -22,6 +25,8 @@ function App() {
         <Route path='category/:cat' element={<Category />} />
       </Routes>
     </Router>
+    <ToastContainer />
+    </>
   );
 }
 

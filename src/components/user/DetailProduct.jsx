@@ -6,11 +6,11 @@ import Footer from "../front/Footer";
 import Nav from "../front/Nav";
 import { FaStar, FaRegStar, FaCartPlus } from 'react-icons/fa'
 import Loading from "../loader/Loading";
+import { toast } from "react-toastify";
 
 const DetailProduct = () => {
   const [productId, setProductId] = useState({})
   const [quantity, setQuantity] = useState(1)
-  const [message, setMessage] = useState('')
   const { id } = useParams();
 
   const changeQuantity = (symbol) => {
@@ -36,10 +36,12 @@ const DetailProduct = () => {
         products
       })
       if (response) {
-        setMessage('Product Successfully Added to Cart')
+        toast.success("Product Successfully Added to Cart", {
+          position: toast.POSITION.TOP_RIGHT
+        })
       }
     } catch (error) {
-      setMessage('Product Cannot Added to Cart')
+      toast.error("Product Cannot Added to Cart")
     }
   }
 
@@ -149,10 +151,6 @@ const DetailProduct = () => {
         </div>
 
       }
-      {/* FIXME: benerin supaya bisa dalam detik keberapa bisa ilang */}
-      <div className={message ? 'block absolute bottom-3 left-2/4 bg-green-400 text-green-800 px-2 py-1 rounded-md text-base font-bold' : 'none'}>
-        {message}
-      </div>
       <Footer />
     </>
   )
