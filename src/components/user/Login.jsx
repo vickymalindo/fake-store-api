@@ -3,12 +3,14 @@ import { useState } from 'react'
 import { Navigate } from "react-router-dom";
 import Footer from '../front/Footer';
 import Nav from '../front/Nav';
+import { BsEyeFill, BsEyeSlashFill } from 'react-icons/bs'
 
 const Login = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [loginStatus, setLoginStatus] = useState(false)
   const [errorMessage, setErrorMessage] = useState('')
+  const [passwordStatus, setPasswordStatus] = useState(false)
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -50,13 +52,19 @@ const Login = () => {
                 </div>
               </div>
               <div className="w-full mb-2">
-                <div className="flex items-center">
-                  <input type='password' placeholder="Password"
-                    className="m-auto px-8 w-full border border-gray-500 rounded py-2 text-gray-700 focus:outline-none" onChange={(e) => setPassword(e.target.value)} />
+                <div className="flex items-center justify-between px-8 w-full border border-gray-500 rounded py-2">
+                  <input type={passwordStatus ? 'text' : 'password'} placeholder="Password"
+                    className="text-gray-700 focus:outline-none" onChange={(e) => setPassword(e.target.value)} />
+                  <span onClick={() => setPasswordStatus(state => !state)} className='cursor-pointer p-1 text-gray-700'>{passwordStatus ?
+                    <BsEyeSlashFill />
+                    :
+                    <BsEyeFill />
+                  }
+                  </span>
                 </div>
               </div>
               <button type="submit"
-                className="w-full py-2 rounded-full bg-green-300 text-green-900 focus:outline-none">Submit
+                className="w-full py-2 rounded-full bg-green-300 text-green-900 focus:outline-none mt-3">Submit
               </button>
             </div>
           </form>

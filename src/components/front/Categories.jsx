@@ -17,12 +17,7 @@ const Categories = () => {
   }
 
   const goCategory = (cat) => {
-    const token = localStorage.getItem('token')
-    if (token) {
-      navigate(`/user/category/${cat}`)
-    } else {
-      navigate(`/category/${cat}`)
-    }
+    navigate(`/category/${cat}`)
   }
   useEffect(() => {
     getCategories()

@@ -118,7 +118,7 @@ const DetailProduct = () => {
                 </div>
               }
             </div>
-            <h4 className="text-lg lg:text-xl font-semibold text-green-700 tracking-wide lg:tracking-wider">$ {productId.price * quantity}</h4>
+            <h4 className="text-lg lg:text-xl font-semibold text-green-700 tracking-wide lg:tracking-wider">$ {(productId.price * quantity).toFixed(2)}</h4>
             <div className="mt-3">
               <div className="flex items-center gap-1">
                 <span className="mr-2">Voucher Toko</span>
