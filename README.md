@@ -29,3 +29,4 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 ## Demo
 
 You can the website demo in the url below.
+Here's the url: [https://tokopaedii.netlify.app/](https://tokopaedii.netlify.app/)
